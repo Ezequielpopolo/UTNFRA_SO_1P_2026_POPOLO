@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sudo groupadd p1c1_2026_g1
+sudo groupadd p1c1_2026_gTodos
+
+MIUSUARIO=${whoami}
+
+sudo useradd -G p1c1_2026_g1 -s /bin/bash -m -p "$(sudo grep $MIUSUARIO /etc/shadow | awk -F ':' '{print $2}')" p1c1_2026_u1
+sudo useradd -G p1c1_2026_g1 -s /bin/bash -m -p "$(sudo grep $MIUSUARIO /etc/shadow | awk -F ':' '{print $2}')" p1c1_2026_u2
+sudo useradd -G p1c1_2026_gTodos -s /bin/bash -m -p "$(sudo grep $MIUSUARIO /etc/shadow | awk -F ':' '{print $2}')" p1c1_2026_u3
